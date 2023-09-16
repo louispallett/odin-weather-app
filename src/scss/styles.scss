@@ -5,5 +5,18 @@
 }
 
 .container {
-    background-color: aqua;
+    display:block;
+}
+
+#main-container {
+    padding: 40px;
+    margin: auto;
+    width: 660px;
+    max-width: 100%;
+    & > div {
+        min-height: 500px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 40px rgba(0,0,0,0.06);
+        padding: 40px;
+    }
 }
