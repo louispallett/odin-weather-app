@@ -1,37 +1,52 @@
 import '../scss/styles.scss';
 import axios from 'axios';
 
-const location = "Istanbul";
-const image = document.querySelector("img");
+const appData = {
+    location: '',
+    description: '',
+    tempCel: 0,
+};
 
 const fetchWeather = (() => {
-    const showWeather = (async(userLocation) => {
+    const fetchData = async (userLocation) => {
         try {
-            const weatherData = await axios.get("http://api.weatherapi.com/v1/current.json?key=d2404bd088b24d72a1164040231309&q=" + userLocation);
-            
-            const location = weatherData.data.location;
-            const data = weatherData.data;
-
-            const country = location.country;
-            let nameLocation;
-            if(country == "United States of America") {
-                nameLocation = `${location.name}, ${location.region}`;
-            } else {
-                nameLocation = `${location.name}, ${country}`;
-            }
-
-            console.log(data);
-            const current = data.current;
-            const tempC = current.temp_c;
-
-            console.log(`Location: ${nameLocation}`);
-            console.log(tempC);
+            const response = await fetch("http://api.weatherapi.com/v1/current.json?key=d2404bd088b24d72a1164040231309&q=" + userLocation, { mode: 'cors' });
+            const weatherData = await response.json();
+            return weatherData;
         } catch {
             console.error("No data found!");
+            return null;
         }
-    });
+    };
 
-    return { showWeather };
+    return { fetchData };
 })();
 
-fetchWeather.showWeather(location);
+let location = "London";
+
+fetchWeather.fetchData(location)
+    .then(weatherData => {
+        if (weatherData) {
+            const locationData = weatherData.location;
+            let nameLocation;
+            if (locationData.country == "United States of America") {
+                nameLocation = `${locationData.name}, ${locationData.region}`;
+            } else {
+                nameLocation = `${locationData.name}, ${locationData.country}`;
+            }
+
+            // Update the appData object with fetched data
+            appData.location = nameLocation;
+            appData.description = weatherData.current.condition.text;
+            appData.tempCel = weatherData.current.temp_c;
+
+            // const temperature = document.getElementById("temperature");
+            // temperature.textContent = appData.tempCel;
+
+            console.log(appData);
+
+        }
+    })
+    .catch(error => {
+        console.error(error);
+    });
