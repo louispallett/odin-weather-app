@@ -1,31 +1,36 @@
 import '../scss/styles.scss';
-import axios from 'axios';
+// import axios from 'axios';
+
+// import { appData, fetchWeather } from './api-info';
 
 const appData = {
     location: '',
     description: '',
     tempCel: 0,
+    feelsLike: 0,
 };
 
-const fetchWeather = (() => {
-    const fetchData = async (userLocation) => {
-        try {
-            const response = await fetch("http://api.weatherapi.com/v1/current.json?key=d2404bd088b24d72a1164040231309&q=" + userLocation, { mode: 'cors' });
-            const weatherData = await response.json();
-            return weatherData;
-        } catch {
-            console.error("No data found!");
-            return null;
-        }
-    };
+const fetchData = async (userInput) => {
+    try {
+        const response = await fetch("http://api.weatherapi.com/v1/current.json?key=d2404bd088b24d72a1164040231309&q=" + userInput, { mode: 'cors' });
+        const weatherData = await response.json();
+        return weatherData;
+    } catch {
+        console.error("No data found!");
+        return null;
+    }
+};
 
-    return { fetchData };
-})();
+document.addEventListener("DOMContentLoaded", () => {
+    const submitBtn = document.querySelector("button");
+    const inputElement = document.querySelector("input");
 
-let location = "London";
+    submitBtn.addEventListener("click", async (event) => {
+        event.preventDefault();
 
-fetchWeather.fetchData(location)
-    .then(weatherData => {
+        const userInput = inputElement.value;
+        const weatherData = await fetchData(userInput);
+
         if (weatherData) {
             const locationData = weatherData.location;
             let nameLocation;
@@ -39,14 +44,8 @@ fetchWeather.fetchData(location)
             appData.location = nameLocation;
             appData.description = weatherData.current.condition.text;
             appData.tempCel = weatherData.current.temp_c;
-
-            // const temperature = document.getElementById("temperature");
-            // temperature.textContent = appData.tempCel;
-
-            console.log(appData);
-
         }
-    })
-    .catch(error => {
-        console.error(error);
+
+        console.log(weatherData);
     });
+});
