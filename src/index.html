@@ -6,22 +6,34 @@
     <title>Weather by LowPal</title>
 </head>
 <body>
-    <div class="container px-3" id="main-container">
-        <div class="container px-3">
-            <form class="input-group mb-3" id="search-wrapper">
-                <!-- This is an input group (element below) - style it so it has a floating label -->
-                <div class="form-floating">
-                    <input type="search" id="search" class="form-control" placeholder="Country of Post/Zip Code" aria-label="search" aria-describedby="search">
-                    <label for="search">Country of Post/Zip Code</label>
+    <div class="wrapper">    
+        <div class="top">
+            <div class="title-wrapper">
+                <div class="top-title-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-hurricane" viewBox="0 0 16 16">
+                        <path d="M6.999 2.6A5.5 5.5 0 0 1 15 7.5a.5.5 0 0 0 1 0 6.5 6.5 0 1 0-13 0 5 5 0 0 0 6.001 4.9A5.5 5.5 0 0 1 1 7.5a.5.5 0 0 0-1 0 6.5 6.5 0 1 0 13 0 5 5 0 0 0-6.001-4.9zM10 7.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                    </svg>
+                    <div>YAWA</div>
                 </div>
-                <button type="submit" class="btn btn-primary" id="search">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                      </svg>
-                </button>
-            </form>
-            <div id="location"></div>
+                <div class="title-sub-text">Yet Another Weather App</div>
+            </div>
+            <div class="search-wrapper">
+                <form class="search" action="#">
+                    <input type="search" placeholder="Search a Location">
+                    <button class="search-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="temp-wrapper">
+                <div class="temp"></div>
+                <div class="temp-icon"></div>
+            </div>
+            <div class="location"></div>
         </div>
+        <div class="bottom"></div>
     </div>
 </body>
 </html>
