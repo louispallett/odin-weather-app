@@ -1,11 +1,11 @@
 import '../scss/styles.scss';
 // import axios from 'axios';
-
-// import { appData, fetchWeather } from './api-info';
+import { showTop, showBottom } from "./app-info"
 
 const appData = {
-    location: '',
-    description: '',
+    city: "",
+    country: "",
+    description: "",
     tempCel: 0,
     feelsLike: 0,
     windKph: 0,
@@ -34,21 +34,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (weatherData) {
             const locationData = weatherData.location;
-            let nameLocation;
+            let country;
             if (locationData.country == "United States of America") {
-                nameLocation = `${locationData.name}, ${locationData.region}`;
+                country = locationData.region;
             } else {
-                nameLocation = `${locationData.name}, ${locationData.country}`;
+                country = locationData.country;
             }
 
             // Update the appData object with fetched data
-            appData.location = nameLocation;
+            appData.city = weatherData.location.name;
+            appData.country = country;
             appData.description = weatherData.current.condition.text;
             appData.tempCel = weatherData.current.temp_c;
             appData.feelsLike = weatherData.current.feelslike_c;
             appData.windKph = weatherData.current.wind_kph;
         }
 
-        console.log(appData);
+        // console.log(weatherData);
+        showTop(appData.city, appData.country, appData.tempCel, appData.description)
     });
 });
