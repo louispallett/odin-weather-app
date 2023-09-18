@@ -8,6 +8,7 @@ const appData = {
     description: '',
     tempCel: 0,
     feelsLike: 0,
+    windKph: 0,
 };
 
 const fetchData = async (userInput) => {
@@ -22,7 +23,7 @@ const fetchData = async (userInput) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    const submitBtn = document.querySelector("button");
+    const submitBtn = document.querySelector(".search-btn");
     const inputElement = document.querySelector("input");
 
     submitBtn.addEventListener("click", async (event) => {
@@ -44,8 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
             appData.location = nameLocation;
             appData.description = weatherData.current.condition.text;
             appData.tempCel = weatherData.current.temp_c;
+            appData.feelsLike = weatherData.current.feelslike_c;
+            appData.windKph = weatherData.current.wind_kph;
         }
 
-        console.log(weatherData);
+        console.log(appData);
     });
 });
