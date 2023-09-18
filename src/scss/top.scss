@@ -73,14 +73,26 @@
 
 .city-wrapper,
 .region-wrapper {
-    margin-left: 20px;
+    margin-left: 10px;
     font-weight: bold;
+}
+
+.temp-wrapper,
+.description-wrapper {
+    margin-right: 20px
 }
 
 .city-wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
+}
+
+.description-wrapper {
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .region-wrapper {
