@@ -1,20 +1,29 @@
 export { showTop, showBottom };
 
+const removesChildren = ((parent) => {
+    while(parent.lastChild) {
+        parent.removeChild(parent.lastChild);
+    }
+});
+
 const showTop = ((city, region, temp, description) => {
     // console.log(`${city}, ${region}, ${temp}, ${description}`)
     const cityWrapper = document.querySelector(".city-wrapper");
+    removesChildren(cityWrapper);
     const cityElement = document.createElement("div");
     cityElement.setAttribute("id", "city");
     cityElement.textContent = city;
     cityWrapper.appendChild(cityElement);
 
     const regionWrapper = document.querySelector(".region-wrapper");
+    removesChildren(regionWrapper);
     const regionElement = document.createElement("div");
     regionElement.setAttribute("id", "region");
     regionElement.textContent = region;
     regionWrapper.appendChild(regionElement);
 
     const tempWrapper = document.querySelector(".temp-wrapper");
+    removesChildren(tempWrapper);
     // Below is temporary!
     tempWrapper.innerHTML = `<div>
     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" class="bi bi-cloud-drizzle-fill" viewBox="0 0 16 16">
@@ -27,6 +36,7 @@ const showTop = ((city, region, temp, description) => {
     tempWrapper.appendChild(tempElement);
 
     const descriptionWrapper = document.querySelector(".description-wrapper");
+    removesChildren(descriptionWrapper);
     const descriptionElement = document.createElement("div");
     descriptionElement.textContent = description;
     descriptionWrapper.appendChild(descriptionElement);
