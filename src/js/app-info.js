@@ -42,6 +42,34 @@ const showTop = ((city, region, temp, description) => {
     descriptionWrapper.appendChild(descriptionElement);
 });
 
-const showBottom = ((feelsLike, windDir, wind, humidity) => {
-    // can create array of arguments and pass them through a for loop to add to bottom grid!
+const showBottom = ((feelsLike, humidity, wind, windDir) => {
+
+    const feelsLikeElement = document.getElementById("feels-like");
+    feelsLikeElement.innerHTML = "";
+    const feelsLikeInfo = document.createElement("div");
+    feelsLikeInfo.textContent = feelsLike + "°C";
+    feelsLikeElement.appendChild(feelsLikeInfo);
+
+    const humidityElement = document.getElementById("humidity");
+    humidityElement.innerHTML = "";
+    const humidityInfo = document.createElement("div");
+    humidityInfo.textContent = humidity;
+    humidityElement.appendChild(humidityInfo);
+    
+    const windElement = document.getElementById("wind");
+    windElement.innerHTML = "";
+    const windInfo = document.createElement("div");
+    windInfo.textContent = wind;
+    windElement.appendChild(windInfo);
+    
+    const windDirElement = document.getElementById("wind-dir");
+    windDirElement.innerHTML = "";
+    const windDirInfo = document.createElement("div");
+    windDirInfo.textContent = windDir;
+    windDirElement.appendChild(windDirInfo);
+
+    const array = [feelsLikeInfo, humidityInfo, windInfo, windDirInfo];
+    array.map(x => {
+        x.setAttribute("id", "info");
+    })
 });

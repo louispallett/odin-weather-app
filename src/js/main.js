@@ -8,7 +8,9 @@ const appData = {
     description: "",
     tempCel: 0,
     feelsLike: 0,
+    windDir: 0,
     windKph: 0,
+    humitity: 0,
 };
 
 const fetchData = async (userInput) => {
@@ -47,10 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
             appData.description = weatherData.current.condition.text;
             appData.tempCel = weatherData.current.temp_c;
             appData.feelsLike = weatherData.current.feelslike_c;
+            appData.windDir = weatherData.current.wind_degree;
             appData.windKph = weatherData.current.wind_kph;
+            appData.humitity = weatherData.current.humidity;
         }
 
-        // console.log(weatherData);
-        showTop(appData.city, appData.country, appData.tempCel, appData.description)
+        console.log(weatherData);
+        showTop(appData.city, appData.country, appData.tempCel, appData.description);
+        showBottom(appData.feelsLike, appData.humitity, appData.windKph, appData.windDir);
     });
 });
