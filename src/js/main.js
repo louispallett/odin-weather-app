@@ -31,7 +31,7 @@ const submitNewLocation = (() => {
 document.addEventListener("DOMContentLoaded", async () => {
     const userInput = "London";
     const weatherData = await fetchData(userInput);
-    
+    console.log(weatherData);
     fillData(weatherData);
 });
 
@@ -40,7 +40,7 @@ const fillData = ((weatherData) => {
     let weatherCountry;
     const locationData = weatherData.location;
     if (locationData.country == "United States of America") {
-        weatherCountry = locationData.region;
+        weatherCountry = locationData.region + ", USA";
     } else {
         weatherCountry = locationData.country;
     }
@@ -56,8 +56,6 @@ const fillData = ((weatherData) => {
         humitity: weatherData.current.humidity,
         uv: weatherData.current.uv,
     }
-
-    console.log(appData.uv);
 
     showTop(appData.city, appData.country, appData.tempCel, appData.description);
     showBottom(appData.feelsLike, appData.humitity, appData.windKph, appData.windDir, appData.uv);
