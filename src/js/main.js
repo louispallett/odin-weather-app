@@ -5,11 +5,15 @@ import { showTop, showBottom } from "./app-info"
 const fetchData = async (userInput) => {
     try {
         const response = await fetch("http://api.weatherapi.com/v1/current.json?key=d2404bd088b24d72a1164040231309&q=" + userInput, { mode: 'cors' });
+        if (!response.ok) { // if HTTP-status is 200-299
+            // get the error message from the server,
+            const error = await response.text();
+            throw new Error(error);
+        }
         const weatherData = await response.json();
         return weatherData;
-    } catch {
-        console.error("No data found!");
-        return null;
+    } catch(error) {
+        console.log(error);
     }
 };
 
@@ -38,11 +42,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 const fillData = ((weatherData) => {
     
     let weatherCountry;
-    const locationData = weatherData.location;
-    if (locationData.country == "United States of America") {
-        weatherCountry = locationData.region + ", USA";
+    if (weatherData.location.country == "United States of America") {
+        weatherCountry = weatherData.location.region + ", USA";
     } else {
-        weatherCountry = locationData.country;
+        weatherCountry = weatherData.location.country;
     }
 
     const appData = {

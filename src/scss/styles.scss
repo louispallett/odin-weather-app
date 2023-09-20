@@ -1,3 +1,4 @@
+@use "search";
 @use "top";
 @use "bottom";
 // @import "~bootstrap/scss/bootstrap";
@@ -23,7 +24,7 @@ body {
 	100% {
 		background-position: 0% 50%;
 	}
-} 
+}
 
 .wrapper {
     min-height: 100vh;
