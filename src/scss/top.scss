@@ -57,7 +57,7 @@
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
     gap: 5px;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .temp-wrapper {
@@ -99,11 +99,11 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: 1.5rem !important;
+    font-size: 1.25rem !important;
     grid-area: 2 / 2 / 3 / 3;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     .location-wrapper {
         font-size: 2rem;
     }
