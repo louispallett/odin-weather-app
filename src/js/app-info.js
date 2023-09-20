@@ -40,30 +40,33 @@ const showTop = ((city, region, temp, description) => {
 
 const showBottom = ((feelsLike, humidity, wind, windDir) => {
     const feelsLikeElement = document.getElementById("feels-like");
-    feelsLikeElement.innerHTML = "";
+    removesChildren(feelsLikeElement);
     const feelsLikeInfo = document.createElement("div");
     feelsLikeInfo.textContent = feelsLike + "°C";
     feelsLikeElement.appendChild(feelsLikeInfo);
 
     const humidityElement = document.getElementById("humidity");
-    humidityElement.innerHTML = "";
+    removesChildren(humidityElement);
     const humidityInfo = document.createElement("div");
-    humidityInfo.textContent = humidity;
+    humidityInfo.textContent = humidity + "%";
     humidityElement.appendChild(humidityInfo);
     
     const windElement = document.getElementById("wind");
-    windElement.innerHTML = "";
+    removesChildren(windElement);
     const windInfo = document.createElement("div");
-    windInfo.textContent = wind;
+    windInfo.textContent = wind + " kph";
     windElement.appendChild(windInfo);
-    
-    const windDirElement = document.getElementById("wind-dir");
-    windDirElement.innerHTML = "";
-    const windDirInfo = document.createElement("div");
-    windDirInfo.textContent = windDir;
-    windDirElement.appendChild(windDirInfo);
 
-    const array = [feelsLikeInfo, humidityInfo, windInfo, windDirInfo];
+    const windArrow = document.getElementById("wind-arrow");
+    windArrow.style.transform = `rotate(${windDir}deg)`;
+    
+    // const windDirElement = document.getElementById("wind-dir");
+    // removesChildren(windDirElement);
+    // const windDirInfo = document.createElement("div");
+    // windDirInfo.textContent = windDir;
+    // windDirElement.appendChild(windDirInfo);
+
+    const array = [feelsLikeInfo, humidityInfo, windInfo];
     array.map(x => {
         x.setAttribute("id", "info");
     })

@@ -38,15 +38,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 const fillData = ((weatherData) => {
     
     let weatherCountry;
-    
-    if (weatherData) {
-        const locationData = weatherData.location;
-        if (locationData.country == "United States of America") {
-            weatherCountry = locationData.region;
-        } else {
-            weatherCountry = locationData.country;
-        }
-    
+    const locationData = weatherData.location;
+    if (locationData.country == "United States of America") {
+        weatherCountry = locationData.region;
+    } else {
+        weatherCountry = locationData.country;
     }
 
     const appData = {
@@ -59,6 +55,8 @@ const fillData = ((weatherData) => {
         windKph: weatherData.current.wind_kph,
         humitity: weatherData.current.humidity,
     }
+
+    console.log(weatherData);
 
     showTop(appData.city, appData.country, appData.tempCel, appData.description);
     showBottom(appData.feelsLike, appData.humitity, appData.windKph, appData.windDir);
