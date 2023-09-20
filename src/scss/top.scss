@@ -10,17 +10,15 @@
     justify-content: flex-end;
     align-items: center;
     font-weight: bold;
-}
-
-.top-title-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 48px;
-}
-
-.title-sub-text {
-    font-size: 16px;
+    & > div:first-child {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 48px;
+    }
+    & > div:nth-child(2) {
+        font-size: 16px;
+    }
 }
 
 .search-wrapper {
