@@ -38,7 +38,7 @@ const showTop = ((city, region, temp, description) => {
     descriptionWrapper.appendChild(descriptionElement);
 });
 
-const showBottom = ((feelsLike, humidity, wind, windDir) => {
+const showBottom = ((feelsLike, humidity, wind, windDir, uv) => {
     const feelsLikeElement = document.getElementById("feels-like");
     removesChildren(feelsLikeElement);
     const feelsLikeInfo = document.createElement("div");
@@ -60,13 +60,21 @@ const showBottom = ((feelsLike, humidity, wind, windDir) => {
     const windArrow = document.getElementById("wind-arrow");
     windArrow.style.transform = `rotate(${windDir}deg)`;
     
-    // const windDirElement = document.getElementById("wind-dir");
-    // removesChildren(windDirElement);
-    // const windDirInfo = document.createElement("div");
-    // windDirInfo.textContent = windDir;
-    // windDirElement.appendChild(windDirInfo);
+    const uvElement = document.getElementById("UV");
+    removesChildren(uvElement);
+    const uvInfo = document.createElement("div");
+    uvInfo.textContent = uv;
+    if(uv > 9) {
+        uvElement.style.background = "#ad0303";
+    } else if (uv < 6) {
+        uvElement.style.background = "#03ad11";
+    } else {
+        uvElement.style.background = "#b0b301";
+    }
 
-    const array = [feelsLikeInfo, humidityInfo, windInfo];
+    uvElement.appendChild(uvInfo);
+
+    const array = [feelsLikeInfo, humidityInfo, windInfo, uvInfo];
     array.map(x => {
         x.setAttribute("id", "info");
     })

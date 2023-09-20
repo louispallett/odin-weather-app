@@ -54,10 +54,11 @@ const fillData = ((weatherData) => {
         windDir: weatherData.current.wind_degree,
         windKph: weatherData.current.wind_kph,
         humitity: weatherData.current.humidity,
+        uv: weatherData.current.uv,
     }
 
-    console.log(weatherData);
+    console.log(appData.uv);
 
     showTop(appData.city, appData.country, appData.tempCel, appData.description);
-    showBottom(appData.feelsLike, appData.humitity, appData.windKph, appData.windDir);
+    showBottom(appData.feelsLike, appData.humitity, appData.windKph, appData.windDir, appData.uv);
 });
