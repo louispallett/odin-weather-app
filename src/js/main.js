@@ -23,17 +23,6 @@ const submitNewLocation = (() => {
         const userInput = inputElement.value;
         const weatherData = await fetchData(userInput);
 
-        let country;
-
-        if (weatherData) {
-            const locationData = weatherData.location;
-            if (locationData.country == "United States of America") {
-                country = locationData.region;
-            } else {
-                country = locationData.country;
-            }
-
-        }
         
         fillData(weatherData);
     });
@@ -42,14 +31,27 @@ const submitNewLocation = (() => {
 document.addEventListener("DOMContentLoaded", async () => {
     const userInput = "London";
     const weatherData = await fetchData(userInput);
-
+    
     fillData(weatherData);
 });
 
 const fillData = ((weatherData) => {
+    
+    let weatherCountry;
+    
+    if (weatherData) {
+        const locationData = weatherData.location;
+        if (locationData.country == "United States of America") {
+            weatherCountry = locationData.region;
+        } else {
+            weatherCountry = locationData.country;
+        }
+    
+    }
+
     const appData = {
         city: weatherData.location.name,
-        country: weatherData.location.country,
+        country: weatherCountry,
         description: weatherData.current.condition.text,
         tempCel: weatherData.current.temp_c,
         feelsLike: weatherData.current.feelslike_c,
