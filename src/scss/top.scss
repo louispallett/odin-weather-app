@@ -69,21 +69,16 @@
     display: flex;
 }
 
-.city-wrapper,
-.region-wrapper {
-    margin-left: 10px;
-    font-weight: bold;
-}
-
 .temp-wrapper,
 .description-wrapper {
-    margin-right: 20px
+    margin-right: 10px
 }
 
 .city-wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
+    font-weight: bold;
 }
 
 .description-wrapper {
@@ -91,14 +86,17 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #adadad;;
 }
 
 .region-wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: 1.25rem !important;
     grid-area: 2 / 2 / 3 / 3;
+    font-size: 1.25rem !important;
 }
 
 @media only screen and (max-width: 600px) {

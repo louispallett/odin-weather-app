@@ -11,6 +11,10 @@
         flex-direction: column;
         font-weight: bold;
         font-size: 1.2rem;
+        background-color: #88888838;
+        border-radius: 20px;
+        margin: 10px;
+        box-shadow: 2px 2px 2px #444444;
         & > div:first-child {
             color: #adadad;
         }
