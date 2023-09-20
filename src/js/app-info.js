@@ -7,18 +7,15 @@ const removesChildren = ((parent) => {
 });
 
 const showTop = ((city, region, temp, description) => {
-    // console.log(`${city}, ${region}, ${temp}, ${description}`)
     const cityWrapper = document.querySelector(".city-wrapper");
     removesChildren(cityWrapper);
     const cityElement = document.createElement("div");
-    cityElement.setAttribute("id", "city");
     cityElement.textContent = city;
     cityWrapper.appendChild(cityElement);
 
     const regionWrapper = document.querySelector(".region-wrapper");
     removesChildren(regionWrapper);
     const regionElement = document.createElement("div");
-    regionElement.setAttribute("id", "region");
     regionElement.textContent = region;
     regionWrapper.appendChild(regionElement);
 
@@ -31,7 +28,6 @@ const showTop = ((city, region, temp, description) => {
     </svg>
     </div>`
     const tempElement = document.createElement("div");
-    tempElement.setAttribute("id", "temp");
     tempElement.textContent = `${temp}°C`;
     tempWrapper.appendChild(tempElement);
 
@@ -43,7 +39,6 @@ const showTop = ((city, region, temp, description) => {
 });
 
 const showBottom = ((feelsLike, humidity, wind, windDir) => {
-
     const feelsLikeElement = document.getElementById("feels-like");
     feelsLikeElement.innerHTML = "";
     const feelsLikeInfo = document.createElement("div");
