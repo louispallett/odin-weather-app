@@ -4,7 +4,7 @@ import { showTop, showBottom } from "./app-info"
 
 const fetchData = async (userInput) => {
     try {
-        const response = await fetch("http://api.weatherapi.com/v1/current.json?key=d2404bd088b24d72a1164040231309&q=" + userInput, { mode: 'cors' });
+        const response = await fetch("http://api.weatherapi.com/v1/forecast.json?key=d2404bd088b24d72a1164040231309&q=" + userInput, { mode: 'cors' });
         if (!response.ok) { // if HTTP-status is 200-299
             // get the error message from the server,
             const error = await response.text();
@@ -27,7 +27,7 @@ const submitNewLocation = (() => {
         const userInput = inputElement.value;
         const weatherData = await fetchData(userInput);
 
-        
+        console.log(weatherData);
         fillData(weatherData);
     });
 })();

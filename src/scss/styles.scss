@@ -1,6 +1,7 @@
 @use "search";
 @use "top";
 @use "bottom";
+@use "forecast";
 // @import "~bootstrap/scss/bootstrap";
 
 * {
@@ -9,9 +10,9 @@
 }
 
 body {
-	background: linear-gradient(-45deg, #8830fc, #1a30f5, #2371e6, #0998eb);
+	background: linear-gradient(45deg, #8830fc, #1a30f5, #2371e6, #0998eb);
 	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+	animation: gradient 12s ease infinite;
 }
 
 @keyframes gradient {
@@ -27,8 +28,8 @@ body {
 }
 
 .wrapper {
-    min-height: 100vh;
+    // min-height: 100vh;
     display: grid;
-    grid-template-rows: 350px 1fr;
+    grid-template-rows: 350px 1fr 1fr;
     grid-template-columns: 1fr 5fr 1fr;
 }

@@ -1,0 +1,8 @@
+.forecast-wrapper {
+    grid-area: 3 / 2 / 4 / 3;
+    & > div {
+        border-bottom: 1px solid white;
+        padding: 20px;
+        margin: 20px;
+    }
+}
