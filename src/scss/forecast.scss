@@ -1,6 +1,13 @@
 .forecast-wrapper {
     grid-area: 3 / 2 / 4 / 3;
+    display: flex;
+    justify-content: center;
     & > div {
+        max-width: 500px;
+        flex: 1 auto;
+    }
+
+    & > div > div {
         border-bottom: 1px solid white;
         padding: 20px;
         margin: 20px;

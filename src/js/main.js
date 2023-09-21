@@ -1,10 +1,12 @@
 import '../scss/styles.scss';
 // import axios from 'axios';
 import { showTop, showBottom } from "./app-info"
+import { showForecast } from './forecast';
+
 
 const fetchData = async (userInput) => {
     try {
-        const response = await fetch("http://api.weatherapi.com/v1/forecast.json?key=d2404bd088b24d72a1164040231309&q=" + userInput, { mode: 'cors' });
+        const response = await fetch("http://api.weatherapi.com/v1/forecast.json?key=d2404bd088b24d72a1164040231309&q=" + userInput + "&days=4", { mode: 'cors' });
         if (!response.ok) { // if HTTP-status is 200-299
             // get the error message from the server,
             const error = await response.text();
@@ -62,13 +64,5 @@ const fillData = ((weatherData) => {
 
     showTop(appData.city, appData.country, appData.tempCel, appData.description);
     showBottom(appData.feelsLike, appData.humitity, appData.windKph, appData.windDir, appData.uv);
+    showForecast(weatherData.forecast.forecastday);
 });
-
-const focus = (() => {
-    const search = document.querySelector("input");
-    const form = document.querySelector("form");
-
-    search.addEventListener("focus", () => {
-        form.style.outline = "2px solid white";
-    });
-})();

@@ -6,6 +6,7 @@ const removesChildren = ((parent) => {
     }
 });
 
+// NOT working
 const displayIcon = ((description) => {
     const split = description.split(" ");
     console.log(split);
