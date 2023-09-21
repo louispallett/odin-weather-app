@@ -63,3 +63,12 @@ const fillData = ((weatherData) => {
     showTop(appData.city, appData.country, appData.tempCel, appData.description);
     showBottom(appData.feelsLike, appData.humitity, appData.windKph, appData.windDir, appData.uv);
 });
+
+const focus = (() => {
+    const search = document.querySelector("input");
+    const form = document.querySelector("form");
+
+    search.addEventListener("focus", () => {
+        form.style.outline = "2px solid white";
+    });
+})();
