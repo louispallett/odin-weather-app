@@ -19,12 +19,6 @@ const showForecast = ((forecastArray) => {
 });
 
 const showDate = ((i) => {
-    const array = date.split("-");
-    let result = [];
-    for(let i = 0; i < array.length; i++) {
-        let dateNum = parseInt(array[i]);
-        result.push(dateNum);
-    }
     const dateInfo = document.createElement("div");
 
     // date_fns counts months lie arrays (Jan = 0, December = 11). So, instead we can just create a variable for the 
