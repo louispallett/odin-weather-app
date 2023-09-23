@@ -1,22 +1,5 @@
-.title-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    font-weight: bold;
-    & > div:first-child {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 48px;
-    }
-    & > div:nth-child(2) {
-        font-size: 16px;
-    }
-}
-
 form {
-    border: 2px solid white;
+    border: 3px solid white;
 }
 
 .search-wrapper {

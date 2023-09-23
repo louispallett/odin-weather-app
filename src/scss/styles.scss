@@ -29,6 +29,39 @@ body {
 
 .wrapper {
     display: grid;
-    grid-template-rows: 350px 1fr 1fr;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 300px 1fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.title-wrapper {
+	grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+	margin: 30px;
+    font-weight: bold;
+    & > div:first-child {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 48px;
+    }
+    & > div:nth-child(2) {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+	.wrapper {
+		grid-template-rows: 100px 200px 1fr 1fr;
+		grid-template-columns: 1fr 5fr 1fr;
+	}
+
+	.title-wrapper {
+		grid-area: 1 / 2 / 2 / 3;
+		margin: 0;
+		justify-content: center;
+		align-items: center;
+	}
 }

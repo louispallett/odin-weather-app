@@ -12,10 +12,6 @@ const showForecast = ((forecastArray) => {
         dayElement.appendChild(showTemp(forecastArray[i].day.avgtemp_c));
         dayElement.appendChild(showText(forecastArray[i].day.condition.text))
     }
-
-    // console.log(format(new Date(2014, 1, 11), 'EEEE'));
-
-
 });
 
 const showDate = ((i) => {

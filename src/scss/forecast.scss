@@ -16,3 +16,9 @@
         gap: 20px;
     }
 }
+
+@media only screen and (max-width: 1000px) {
+    .forecast-wrapper {
+        grid-area: 4 / 2 / 5 / 3;
+    }
+}

@@ -1,6 +1,8 @@
 .top {
-    display: grid;
-    grid-template-rows: 1fr 1fr 2fr;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
     grid-area: 1 / 2 / 2 / 3;
 }
 
@@ -52,12 +54,19 @@
     font-size: 1.25rem !important;
 }
 
+@media only screen and (max-width: 1000px) {
+    .top {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .location-wrapper {
         font-size: 2rem;
     }
 
-    .region-wrapper {
+    .region-wrapper, 
+    .description-wrapper {
         font-size: 1rem !important;
     }
 }

@@ -29,7 +29,6 @@ const submitNewLocation = (() => {
         const userInput = inputElement.value;
         const weatherData = await fetchData(userInput);
 
-        console.log(weatherData);
         fillData(weatherData);
     });
 })();
