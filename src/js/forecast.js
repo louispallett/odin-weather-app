@@ -1,5 +1,5 @@
 import { ar } from "date-fns/locale";
-import { format } from "date-fns";
+import { format, addDays } from "date-fns";
 
 export { showForecast };
 
@@ -8,7 +8,7 @@ const showForecast = ((forecastArray) => {
     for(let i = 1; i < forecastArray.length; i++) {
         const dayElement = document.querySelector(".day" + i);
         removesChildren(dayElement);
-        dayElement.appendChild(showDate(forecastArray[i].date));
+        dayElement.appendChild(showDate(i));
         dayElement.appendChild(showTemp(forecastArray[i].day.avgtemp_c));
         dayElement.appendChild(showText(forecastArray[i].day.condition.text))
     }
@@ -18,7 +18,7 @@ const showForecast = ((forecastArray) => {
 
 });
 
-const showDate = ((date) => {
+const showDate = ((i) => {
     const array = date.split("-");
     let result = [];
     for(let i = 0; i < array.length; i++) {
@@ -26,10 +26,14 @@ const showDate = ((date) => {
         result.push(dateNum);
     }
     const dateInfo = document.createElement("div");
-    // console.log(result);
-    console.log(format(new Date(2023, 9, 22), "eeee"));
-    // dateInfo.textContent = date;
-    dateInfo.textContent = format(new Date(result[0], result[1], result[2]), "eeee");
+
+    // date_fns counts months lie arrays (Jan = 0, December = 11). So, instead we can just create a variable for the 
+    // current date, use addDays(currentDate, how much we want to add(in this case via our for loop - i)) and then format the 
+    // date and return it
+    const currentDate = new Date();
+    const day = addDays(currentDate, i);
+
+    dateInfo.textContent = format(new Date(day), "eeee");
     return dateInfo;
 });
 
