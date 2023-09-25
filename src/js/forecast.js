@@ -27,7 +27,7 @@ const showForecast = ((forecastArray) => {
         dayElement.appendChild(showDay(i));
         dayElement.appendChild(showTemp(forecastArray[i].day.avgtemp_c));
         dayElement.appendChild(showRainChance(forecastArray[i].day.daily_chance_of_rain));
-        dayElement.appendChild(showText(forecastArray[i].day.condition.icon))
+        // dayElement.appendChild(showText(forecastArray[i].day.condition.icon))
     }
 });
 
