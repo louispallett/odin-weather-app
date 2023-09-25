@@ -22,6 +22,14 @@ module.exports = {
   module: {
     rules: [
       {
+        mimetype: "image/svg+xml",
+        scheme: "data",
+        type: "asset/resource",
+        generator: {
+          filename: "icons/[hash].svg"
+        }
+      },
+      {
         test: /\.(scss)$/,
         use: [
           {
@@ -50,7 +58,23 @@ module.exports = {
         ]
       },
       {
+        test: /\.svg$/,
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 8 * 1024, // You can adjust this size limit as needed
+          },
+        },
+        generator: {
+          filename: 'icons/[name].[hash][ext]',
+        },
+      },
+      {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
     ]
