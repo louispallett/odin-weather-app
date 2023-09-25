@@ -8,14 +8,11 @@ import dropletFull from "../assets/droplet-full.svg";
 
     The next thing we need to do is replace the showText() with a function for creating an icon based on the weather.
     
-        First: try and get an icon to go up there. Currently the icon will not import because there is not loader. You can find the docs on asset management
-        here: https://webpack.js.org/guides/asset-management/. However, this doesn't seem to be working because of a lack of loader.
-        
-        Then, once an icon can go up, determine how to pick an icon based on the weather API (chance of rain?) then load it on.
-        
-    Next, we need to push out an icon for chance of rain depending on the number - you can do this via an if statement (based on rain %).*/
+        We've managed to fix the image issue with webpack. svgs now pull through (see showRainChance()).
+        To choose an icon, first look at the weatherAPI codes and decide on there: https://www.weatherapi.com/docs/conditions.json
 
-// import noRain from "../assets/droplet.svg";
+        Put simply, create a range (if(code > 1069 && code < 1089), for example, and return an appopriate icon.)*/
+
 
 export { showForecast };
 
