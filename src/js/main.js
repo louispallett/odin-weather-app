@@ -3,7 +3,6 @@ import '../scss/styles.scss';
 import { showTop, showBottom } from "./app-info"
 import { showForecast } from './forecast';
 
-
 const fetchData = async (userInput) => {
     try {
         const response = await fetch("http://api.weatherapi.com/v1/forecast.json?key=d2404bd088b24d72a1164040231309&q=" + userInput + "&days=4", { mode: 'cors' });
