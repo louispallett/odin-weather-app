@@ -36,7 +36,6 @@ const showDay = ((i) => {
     // date and return it
     const currentDate = new Date();
     const day = addDays(currentDate, i);
-
     dateInfo.textContent = format(new Date(day), "eeee");
     return dateInfo;
 });

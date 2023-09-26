@@ -2,6 +2,7 @@ import '../scss/styles.scss';
 // import axios from 'axios';
 import { showTop, showBottom } from "./app-info"
 import { showForecast } from './forecast';
+import { showIcon } from './icon';
 
 const fetchData = async (userInput) => {
     try {
@@ -27,7 +28,7 @@ const submitNewLocation = (() => {
 
         const userInput = inputElement.value;
         const weatherData = await fetchData(userInput);
-
+        console.log(weatherData);
         fillData(weatherData);
     });
 })();
