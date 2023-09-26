@@ -5,6 +5,7 @@
     
     Acknowledgements:
 
+    Tornado Icon: 'game-icons.net' from https://www.svgrepo.com/svg/321607/tornado
     droplet svg files (full, empty, and half) from bootstrap icons.
     sunny.svg: 'Good Stuff No Nonsense' from https://www.svgrepo.com/svg/440537/sun
     rainy.svg: 'Khushmeen Sidhu' from https://www.svgrepo.com/svg/410196/rain-heavy
