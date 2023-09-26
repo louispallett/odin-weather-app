@@ -6,30 +6,6 @@ const removesChildren = ((parent) => {
     }
 });
 
-// NOT working
-const displayIcon = ((description) => {
-    const split = description.split(" ");
-    console.log(split);
-    // split.map(x =>{
-    for(let i = 0; i < split.length; i++) {
-        if(split[i] == "rain" || split[i] =="Rain") {
-            console.log("Rain");
-            break;
-        } else if(split[i] == "cloudy" || split[i] == "Cloudy" || split[i] == "cloud" || split[i] == "Cloud") {
-            console.log("Cloudy");
-            break;
-        } else if(split[i] == "snow" || split[i] == "Snow") {
-            console.log("Snow");
-            break;
-        } else if (split[i] == "sun" || split[i] == "sunny" || split[i] == "Sun" || split[i] == "Sunny" || split[i] == "clear" || split[i] == "Clear"){
-            console.log("Sunny or clear!");
-        } else {
-            continue;
-        }
-    }
-    // });
-});
-
 const showTop = ((city, region, temp, description) => {
     const cityWrapper = document.querySelector(".city-wrapper");
     removesChildren(cityWrapper);
@@ -45,13 +21,6 @@ const showTop = ((city, region, temp, description) => {
 
     const tempWrapper = document.querySelector(".temp-wrapper");
     removesChildren(tempWrapper);
-    // Below is temporary!
-    // tempWrapper.innerHTML = `<div>
-    // <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" class="bi bi-cloud-drizzle-fill" viewBox="0 0 16 16">
-    //     <path d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm-3.5 1.5a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm.747-8.498a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973z"/>
-    // </svg>
-    // </div>`
-    // displayIcon(description);
     const tempElement = document.createElement("div");
     tempElement.textContent = `${temp}°C`;
     tempWrapper.appendChild(tempElement);
