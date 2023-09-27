@@ -36,7 +36,7 @@ const submitNewLocation = (() => {
 document.addEventListener("DOMContentLoaded", async () => {
     const userInput = "London";
     const weatherData = await fetchData(userInput);
-    console.log(weatherData);
+    console.log(weatherData.forecast.forecastday[0].astro.sunrise);
     fillData(weatherData);
 });
 
@@ -59,9 +59,11 @@ const fillData = ((weatherData) => {
         windKph: weatherData.current.wind_kph,
         humitity: weatherData.current.humidity,
         uv: weatherData.current.uv,
+        sunrise: weatherData.forecast.forecastday[0].astro.sunrise,
+        sunset: weatherData.forecast.forecastday[0].astro.sunset,
     }
 
     showTop(appData.city, appData.country, appData.tempCel, appData.description);
-    showBottom(appData.feelsLike, appData.humitity, appData.windKph, appData.windDir, appData.uv);
+    showBottom(appData.feelsLike, appData.humitity, appData.windKph, appData.windDir, appData.uv, appData.sunrise, appData.sunset);
     showForecast(weatherData.forecast.forecastday);
 });

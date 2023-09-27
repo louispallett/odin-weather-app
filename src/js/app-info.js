@@ -32,7 +32,7 @@ const showTop = ((city, region, temp, description) => {
     descriptionWrapper.appendChild(descriptionElement);
 });
 
-const showBottom = ((feelsLike, humidity, wind, windDir, uv) => {
+const showBottom = ((feelsLike, humidity, wind, windDir, uv, sunrise, sunset) => {
     const feelsLikeElement = document.getElementById("feels-like");
     removesChildren(feelsLikeElement);
     const feelsLikeInfo = document.createElement("div");
@@ -68,7 +68,17 @@ const showBottom = ((feelsLike, humidity, wind, windDir, uv) => {
 
     uvElement.appendChild(uvInfo);
 
-    const array = [feelsLikeInfo, humidityInfo, windInfo, uvInfo];
+    const sunriseWrapper = document.getElementById("sunrise");
+    const sunriseInfo = document.createElement("div");
+    sunriseInfo.textContent = sunrise;
+    sunriseWrapper.appendChild(sunriseInfo);
+
+    const sunsetWrapper = document.getElementById("sunset");
+    const sunsetInfo = document.createElement("div");
+    sunsetInfo.textContent = sunset;
+    sunsetWrapper.appendChild(sunsetInfo);
+
+    const array = [feelsLikeInfo, humidityInfo, windInfo, uvInfo, sunriseInfo, sunsetInfo];
     array.map(x => {
         x.setAttribute("id", "info");
     })
