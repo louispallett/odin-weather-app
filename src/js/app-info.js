@@ -9,9 +9,10 @@ export { showTop, showBottom };
     See icon.js on how to do this. Shouldn't be too difficult one you work through the 
     codes on the weather API.
     
-    Remove day 3 in forcast.js. You can only scan the next two days. Remember, the 'forcast'
-    part of the weatherAPI starts from day 0 (i.e. the current day, today!), so the for loop in
-    showForecast() i = 1 (rather than 0).*/
+    NEED to re contextualize the .location-wrapper so that the weather icon can fit in 
+    there. Easiest way to do this is via grid. Turn location wrapper into a 2 x 4 grid, so 
+    that the icon can effectively go left of the temp and description. Then, the far left column
+    will be empty.*/
 
 const removesChildren = ((parent) => {
     while(parent.lastChild) {
