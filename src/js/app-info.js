@@ -1,5 +1,18 @@
 export { showTop, showBottom };
 
+/* TO DO
+
+    Add sunrise and sunset icons to the .bottom elements. First find them, then 
+    just add these icons via the html - I've commented where they can be added.
+    
+    The harder job is to finally get the weather icons up depending on the weather. 
+    See icon.js on how to do this. Shouldn't be too difficult one you work through the 
+    codes on the weather API.
+    
+    Remove day 3 in forcast.js. You can only scan the next two days. Remember, the 'forcast'
+    part of the weatherAPI starts from day 0 (i.e. the current day, today!), so the for loop in
+    showForecast() i = 1 (rather than 0).*/
+
 const removesChildren = ((parent) => {
     while(parent.lastChild) {
         parent.removeChild(parent.lastChild);
