@@ -8,7 +8,8 @@ export { showIcon };
     To so this, probably best to RETURN the icon in question, so that the <img> element
     can be SET to it? In the place the function is called, first set it to console.log(FUNCTION)
     so that you can see the image coming through (we still need to fix the .location-wrapper 
-    grid).*/
+    grid).
+*/
 
 // const showIcon = (() => {
 //     const wrapper = document.querySelector(".wrapper");

@@ -1,5 +1,4 @@
 import '../scss/styles.scss';
-// import axios from 'axios';
 import { showTop, showBottom } from "./app-info"
 import { showForecast } from './forecast';
 // import { showIcon } from './icon';

@@ -1,7 +1,20 @@
+/*STYLE RETHINK:
+
+    Probably better if we have .day# (this is .forecast-wrapper > div > div OR .forecast-inner > div)
+    as having the background-color (instead of the > div).
+
+    We can then set the .forecast-inner > div to be a 1 x 4 grid (and when < 1000px screen set it to 
+    2 x 3, so we have day on the left with the remaining 2 x 2 on the right with the info?
+
+*/
+
+
 .forecast-wrapper {
     grid-area: 3 / 2 / 4 / 3;
     display: flex;
     justify-content: center;
+    // Could change below to .forecast-inner. We can then put the > div below inside of 
+    // this (as '& > div')?
     & > div {
         max-width: 500px;
         flex: 1;
@@ -29,5 +42,12 @@
 @media only screen and (max-width: 1000px) {
     .forecast-wrapper {
         grid-area: 4 / 2 / 5 / 3;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    .forecast-inner > div > div:first-child {
+        font-size: .85rem;
     }
 }
