@@ -1,4 +1,4 @@
-import rainyIcon from "../assets/rainy.svg";
+// import rainyIcon from "../assets/rainy.svg";
 export { showIcon };
 
 const showIcon = (() => {
