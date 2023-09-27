@@ -69,11 +69,13 @@ const showBottom = ((feelsLike, humidity, wind, windDir, uv, sunrise, sunset) =>
     uvElement.appendChild(uvInfo);
 
     const sunriseWrapper = document.getElementById("sunrise");
+    removesChildren(sunriseWrapper);
     const sunriseInfo = document.createElement("div");
     sunriseInfo.textContent = sunrise;
     sunriseWrapper.appendChild(sunriseInfo);
 
     const sunsetWrapper = document.getElementById("sunset");
+    removesChildren(sunsetWrapper);
     const sunsetInfo = document.createElement("div");
     sunsetInfo.textContent = sunset;
     sunsetWrapper.appendChild(sunsetInfo);

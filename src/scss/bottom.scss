@@ -7,6 +7,7 @@
     gap: 10px;
     & > div {
         display: flex;
+        gap: 5px;
         justify-content: center;
         align-items: center;
         flex-direction: column;
@@ -35,9 +36,6 @@
     .bottom {
         grid-template-columns: repeat(2, 175px);
         grid-template-rows: repeat(3, 175px);
-        & > div {
-            gap: 20px;
-        }
     }
 }
 
