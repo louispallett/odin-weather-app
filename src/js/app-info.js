@@ -59,11 +59,11 @@ const showBottom = ((feelsLike, humidity, wind, windDir, uv, sunrise, sunset) =>
     const uvInfo = document.createElement("div");
     uvInfo.textContent = uv;
     if(uv > 8) {
-        uvElement.style.background = "#ad03038e";
+        uvElement.style.background = "#ad0303";
     } else if (uv < 5) {
-        uvElement.style.background = "#03ad1186";
+        uvElement.style.background = "#03ad11";
     } else {
-        uvElement.style.background = "#b0b3018c";
+        uvElement.style.background = "#b0b301";
     }
 
     uvElement.appendChild(uvInfo);
