@@ -24,7 +24,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 10px
+    margin-right: 40px
 }
 
 .temp-wrapper {
@@ -77,6 +77,10 @@
     .city-wrapper {
         font-size: 1.75rem;
     }
+
+    #weather-icon {
+        margin: 30px;
+    }
 }
 
 @media only screen and (max-width: 650px) {
@@ -91,5 +95,9 @@
     
     .city-wrapper {
         font-size: 1.5rem;
+    }
+
+    #weather-icon {
+        margin: 20px;
     }
 }
