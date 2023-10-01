@@ -9,7 +9,7 @@
 }
 
 body {
-	background: linear-gradient(60deg, #8830fc, #1a30f5, #2371e6, #0998eb);
+	background: linear-gradient(-80deg, #8830fc, #1a30f5, #2371e6, #0998eb);
 	background-size: 400% 400%;
 	animation: gradient 10s ease infinite;
 }
@@ -67,8 +67,14 @@ body {
 
 @media only screen and (max-width: 600px) {
 	body {
-		background: linear-gradient(-80deg, #8830fc, #1a30f5, #2371e6, #0998eb);
 		background-size: 150% 150%;
 		animation: gradient 7.5s ease infinite;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: linear-gradient(-80deg, #8830fc, #1a30f5, #2371e6, #0998eb);
+		background-size: 400% 400%;
 	}
 }
