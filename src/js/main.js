@@ -34,8 +34,9 @@ const submitNewLocation = (() => {
 document.addEventListener("DOMContentLoaded", async () => {
     const userInput = "London";
     const weatherData = await fetchData(userInput);
-    console.log(weatherData);
     fillData(weatherData);
+    const input = document.querySelector("input");
+    input.value = "";
 });
 
 const fillData = ((weatherData) => {

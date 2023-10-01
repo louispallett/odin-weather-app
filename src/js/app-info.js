@@ -50,7 +50,6 @@ const showTop = ((city, region, temp, description, code) => {
     removesChildren(iconWrapper);
     const weatherIcon = document.createElement("img");
     weatherIcon.src = showIcon(code);
-    console.log(showIcon(code));
     iconWrapper.appendChild(weatherIcon);
 });
 
