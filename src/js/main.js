@@ -58,7 +58,7 @@ const fillData = ((weatherData) => {
         uv: weatherData.current.uv,
         sunrise: weatherData.forecast.forecastday[0].astro.sunrise,
         sunset: weatherData.forecast.forecastday[0].astro.sunset,
-        icon: weatherData.current.condition.code,
+        code: weatherData.current.condition.code,
     }
 
     showTop(appData.city, appData.country, appData.tempCel, appData.description, appData.code);

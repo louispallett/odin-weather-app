@@ -23,7 +23,7 @@
 #weather-icon {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
     margin-right: 40px
 }
 
@@ -98,6 +98,6 @@
     }
 
     #weather-icon {
-        margin: 20px;
+        margin: 10px;
     }
 }

@@ -48,8 +48,10 @@ const showTop = ((city, region, temp, description, code) => {
 
     const iconWrapper = document.getElementById("weather-icon");
     removesChildren(iconWrapper);
-    const weatherIcon = document.createElement("svg");
+    const weatherIcon = document.createElement("img");
     weatherIcon.src = showIcon(code);
+    console.log(showIcon(code));
+    iconWrapper.appendChild(weatherIcon);
 });
 
 const showBottom = ((feelsLike, humidity, wind, windDir, uv, sunrise, sunset) => {
