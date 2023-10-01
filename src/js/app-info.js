@@ -1,20 +1,6 @@
 export { showTop, showBottom };
 import { showIcon } from "./icon";
 
-/* TO DO
-
-    Add sunrise and sunset icons to the .bottom elements. First find them, then 
-    just add these icons via the html - I've commented where they can be added.
-    
-    The harder job is to finally get the weather icons up depending on the weather. 
-    See icon.js on how to do this. Shouldn't be too difficult one you work through the 
-    codes on the weather API.
-    
-    NEED to re contextualize the .location-wrapper so that the weather icon can fit in 
-    there. Easiest way to do this is via grid. Turn location wrapper into a 2 x 4 grid, so 
-    that the icon can effectively go left of the temp and description. Then, the far left column
-    will be empty.*/
-
 const removesChildren = ((parent) => {
     while(parent.lastChild) {
         parent.removeChild(parent.lastChild);

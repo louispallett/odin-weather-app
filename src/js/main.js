@@ -5,7 +5,7 @@ import { showForecast } from './forecast';
 
 const fetchData = async (userInput) => {
     try {
-        const response = await fetch("http://api.weatherapi.com/v1/forecast.json?key=d2404bd088b24d72a1164040231309&q=" + userInput + "&days=4", { mode: 'cors' });
+        const response = await fetch("https://api.weatherapi.com/v1/forecast.json?key=d2404bd088b24d72a1164040231309&q=" + userInput + "&days=3", { mode: 'cors' });
         if (!response.ok) { // if HTTP-status is 200-299
             // get the error message from the server,
             const error = await response.text();
@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const userInput = "London";
     const weatherData = await fetchData(userInput);
     fillData(weatherData);
-    console.log(weatherData);
     const input = document.querySelector("input");
     input.value = "";
 });
