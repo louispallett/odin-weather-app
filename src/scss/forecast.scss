@@ -13,8 +13,6 @@
     grid-area: 3 / 2 / 4 / 3;
     display: flex;
     justify-content: center;
-    // Could change below to .forecast-inner. We can then put the > div below inside of 
-    // this (as '& > div')?
 }
 
 .forecast-inner {
@@ -29,6 +27,7 @@
         grid-template-columns: 1fr 1fr 1fr;
         background-color: rgba(0, 0, 0, 0.274);
         border-radius: 10px;
+        font-size: 1.3rem;
         & > div:first-child {
             font-weight: bold;
         }
@@ -47,11 +46,16 @@
     .forecast-wrapper {
         grid-area: 4 / 2 / 5 / 3;
     }
-
+    
+    .forecast-inner {
+        & > div {
+            font-size: 1.1rem;
+        }
+    }
 }
 
 @media only screen and (max-width: 400px) {
-    .forecast-inner > div > div:first-child {
+    .forecast-inner > div {
         font-size: .85rem;
     }
 }
