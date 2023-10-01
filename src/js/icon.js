@@ -14,11 +14,7 @@ export { showIcon };
     so that you can see the image coming through (we still need to fix the .location-wrapper 
     grid).
 */
-
-// WARNING: below function is temporary, just outlining how it SHOULD work, but
-// I have no internet :(
 const showIcon = ((weatherCode) => {
-    //if statement here
     switch (weatherCode) {
         case weatherCode < 1005:
             return sunny;

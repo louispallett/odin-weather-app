@@ -1,4 +1,5 @@
 export { showTop, showBottom };
+import { showIcon } from "./icon";
 
 /* TO DO
 
@@ -20,7 +21,7 @@ const removesChildren = ((parent) => {
     }
 });
 
-const showTop = ((city, region, temp, description) => {
+const showTop = ((city, region, temp, description, code) => {
     const cityWrapper = document.querySelector(".city-wrapper");
     removesChildren(cityWrapper);
     const cityElement = document.createElement("div");
@@ -44,6 +45,11 @@ const showTop = ((city, region, temp, description) => {
     const descriptionElement = document.createElement("div");
     descriptionElement.textContent = description;
     descriptionWrapper.appendChild(descriptionElement);
+
+    const iconWrapper = document.getElementById("weather-icon");
+    removesChildren(iconWrapper);
+    const weatherIcon = document.createElement("svg");
+    weatherIcon.src = showIcon(code);
 });
 
 const showBottom = ((feelsLike, humidity, wind, windDir, uv, sunrise, sunset) => {
