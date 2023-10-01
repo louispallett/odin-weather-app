@@ -62,9 +62,11 @@ module.exports = {
         type: 'asset',
         parser: {
           dataUrlCondition: {
-            maxSize: 8 * 1024, // You can adjust this size limit as needed
+            maxSize: 8 * 1024, // Size can be adjusted if needed
           },
         },
+        // This is where we outline how the svg files should be interpreted - i.e. they should just be placed 
+        // in dist/icons/ and given the name we have given in src/assets/ (no long complex names made by webpack)
         generator: {
           filename: 'icons/[name].[hash][ext]',
         },
