@@ -10,8 +10,12 @@ const showIcon = ((weatherCode) => {
     switch (true) {
         case weatherCode < 1005:
             return sunny;
-        case weatherCode < 1088:
+        case weatherCode < 1031:
             return cloudy;
+        case weatherCode < 1073:
+            return rainy;
+        case weatherCode < 1088:
+            return stormy;
         case weatherCode < 1118:
             return snow;
         case weatherCode < 1148:

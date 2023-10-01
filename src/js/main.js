@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const userInput = "London";
     const weatherData = await fetchData(userInput);
     fillData(weatherData);
+    console.log(weatherData);
     const input = document.querySelector("input");
     input.value = "";
 });

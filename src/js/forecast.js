@@ -4,9 +4,11 @@ import dropletEmpty from "../assets/droplet.svg";
 import dropletHalf from "../assets/droplet-half.svg";
 import dropletFull from "../assets/droplet-full.svg";
 
+import { showIcon } from "./icon";
+
 /* TO DO:
 
-    The next thing we need to do is replace the showText() with a function for creating an icon based on the weather.
+    The next thing we need to do is replace the displayIcon() with a function for creating an icon based on the weather.
     
         We've managed to fix the image issue with webpack. svgs now pull through (see showRainChance()).
         To choose an icon, first look at the weatherAPI codes and decide on there: https://www.weatherapi.com/docs/conditions.json
@@ -22,9 +24,9 @@ const showForecast = ((forecastArray) => {
         const dayElement = document.querySelector(".day" + i);
         removesChildren(dayElement);
         dayElement.appendChild(showDay(i));
+        dayElement.appendChild(displayIcon(forecastArray[i].day.condition.code));
         dayElement.appendChild(showTemp(forecastArray[i].day.avgtemp_c));
         dayElement.appendChild(showRainChance(forecastArray[i].day.daily_chance_of_rain));
-        // dayElement.appendChild(showText(forecastArray[i].day.condition.icon))
     }
 });
 
@@ -64,9 +66,12 @@ const showRainChance = ((rain) => {
     return rainInfoWrapper;
 })
 
-const showText = ((text) => {
+const displayIcon = ((code) => {
     const iconWrapper = document.createElement("div");
     const img = document.createElement("img");
+    img.src = showIcon(code);
+    img.setAttribute("width", "32");
+    img.setAttribute("height", "32");
     iconWrapper.appendChild(img);
     return iconWrapper;
 });
