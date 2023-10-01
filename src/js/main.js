@@ -1,7 +1,6 @@
 import '../scss/styles.scss';
 import { showTop, showBottom } from "./app-info"
 import { showForecast } from './forecast';
-// import { showIcon } from './icon';
 
 const fetchData = async (userInput) => {
     try {

@@ -6,16 +6,6 @@ import dropletFull from "../assets/droplet-full.svg";
 
 import { showIcon } from "./icon";
 
-/* TO DO:
-
-    The next thing we need to do is replace the displayIcon() with a function for creating an icon based on the weather.
-    
-        We've managed to fix the image issue with webpack. svgs now pull through (see showRainChance()).
-        To choose an icon, first look at the weatherAPI codes and decide on there: https://www.weatherapi.com/docs/conditions.json
-
-        Put simply, create a range (if(code > 1069 && code < 1089), for example, and return an appopriate icon.)*/
-
-
 export { showForecast };
 
 const showForecast = ((forecastArray) => {
