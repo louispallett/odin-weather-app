@@ -15,14 +15,20 @@
     justify-content: center;
     // Could change below to .forecast-inner. We can then put the > div below inside of 
     // this (as '& > div')?
+}
+
+.forecast-inner {
+    max-width: 500px;
+    flex: 1;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     & > div {
-        max-width: 500px;
-        flex: 1;
-        margin-top: 20px;
-    }
-    & > div > div {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        background-color: rgba(0, 0, 0, 0.274);
+        border-radius: 10px;
         & > div:first-child {
             font-weight: bold;
         }
@@ -31,8 +37,6 @@
             gap: 2px;
         }
         & > div {
-            background-color: rgba(0, 0, 0, 0.274);
-            border-radius: 10px;
             padding: 20px;
             margin: 5px;
         }
