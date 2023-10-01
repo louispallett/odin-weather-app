@@ -2,6 +2,8 @@ import rainy from "../assets/rainy.svg";
 import cloudy from "../assets/cloudy.svg";
 import sunny from "../assets/sunny.svg";
 import stormy from "../assets/stormy.svg"
+// (Yet to exist...)
+// import foggy from "../assets/foggy.svg";
 
 export { showIcon };
 
@@ -22,8 +24,9 @@ const showIcon = ((weatherCode) => {
             return cloudy;
         case weatherCode < 1118:
             return snow;
-        case weatherCode < 1148:
-            return foggy; //need to add this icon!!!
+        //need to add this icon!!!
+        // case weatherCode < 1148:
+        //     return foggy; 
         case weatherCode < 1208:
             return rainy;
         case weatherCode < 1238:
