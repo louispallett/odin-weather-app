@@ -1,4 +1,8 @@
-import rainyIcon from "../assets/rainy.svg";
+import rainy from "../assets/rainy.svg";
+import cloudy from "../assets/cloudy.svg";
+import sunny from "../assets/sunny.svg";
+import stormy from "../assets/stormy.svg"
+
 export { showIcon };
 
 /* Instructions:
@@ -11,18 +15,26 @@ export { showIcon };
     grid).
 */
 
-// const showIcon = (() => {
-//     const wrapper = document.querySelector(".wrapper");
-//     const icon = document.createElement("img");
-//     icon.src = rainyIcon;
-//     wrapper.appendChild(icon);
-// })
-
 // WARNING: below function is temporary, just outlining how it SHOULD work, but
 // I have no internet :(
 const showIcon = ((weatherCode) => {
     //if statement here
-    if(weatherCode >= 1100 && weatherCode <= 1200) {
-        return rainyIcon;
-    } //else if and so on
+    switch (weatherCode) {
+        case weatherCode < 1005:
+            return sunny;
+        case weatherCode < 1088:
+            return cloudy;
+        case weatherCode < 1118:
+            return snow;
+        case weatherCode < 1148:
+            return foggy; //need to add this icon!!!
+        case weatherCode < 1208:
+            return rainy;
+        case weatherCode < 1238:
+            return snow;
+        case weatherCode < 1265:
+            return rainy;
+        default:
+            return stormy;
+    }
 });

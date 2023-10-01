@@ -27,7 +27,6 @@ const submitNewLocation = (() => {
 
         const userInput = inputElement.value;
         const weatherData = await fetchData(userInput);
-        console.log(weatherData);
         fillData(weatherData);
     });
 })();
@@ -35,12 +34,11 @@ const submitNewLocation = (() => {
 document.addEventListener("DOMContentLoaded", async () => {
     const userInput = "London";
     const weatherData = await fetchData(userInput);
-    console.log(weatherData.forecast.forecastday[0].astro.sunrise);
+    console.log(weatherData);
     fillData(weatherData);
 });
 
 const fillData = ((weatherData) => {
-    
     let weatherCountry;
     if (weatherData.location.country == "United States of America") {
         weatherCountry = weatherData.location.region + ", USA";
