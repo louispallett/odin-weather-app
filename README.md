@@ -10,7 +10,7 @@ Acknowledgements:
 | Image | Source |
 | ----------- | ----------- |
 | Tornado Icon | 'game-icons.net' from https://www.svgrepo.com/svg/321607/tornado |
-droplet svg files (full, empty, and half) from bootstrap icons.
+| droplet svg | files (full, empty, and half) from bootstrap icons. |
 | sunny.svg | 'Good Stuff No Nonsense' from https://www.svgrepo.com/svg/440537/sun |
 | rainy.svg | 'SVG Repo' from https://www.svgrepo.com/svg/146977/rain |
 stormy.svg | 'humbleicons' from https://www.svgrepo.com/svg/470897/storm
