@@ -4,7 +4,7 @@
 
 A simple weather app, as part of the FullStack JS course on "The Odin Project".
 
-![A screenshot of the weather app, displaying weather information on a blue background](./screenshot.png)
+![A screenshot of the weather app, displaying weather information on a blue background](src/assets/screenshot.png)
 
 Acknowledgements:
 | Image | Source |
