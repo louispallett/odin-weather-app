@@ -1,8 +1,9 @@
 # odin-weather-app
 
-#### _Weather App_ for the Odin Project
+#### [YAWA](https://louispallett.github.io/odin-weather-app/)
 
-A simple weather app, as part of the FullStack JS course on "The Odin Project".
+YAWA (Yet Another Weather App) A simple weather app, as part of the FullStack JS course on "The Odin Project".
+
 
 ![A screenshot of the weather app, displaying weather information on a blue background](src/assets/screenshot.png)
 
